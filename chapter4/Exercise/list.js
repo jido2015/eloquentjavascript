@@ -1,5 +1,4 @@
 /** A LIST */
-
 //Write a function arrayToList that builds up a list 
 //structure like the one shown when given [1, 2, 3] as argument.
 const arrayToList = array => {
@@ -38,6 +37,7 @@ const arrayToList = array => {
     // Simpler solution
     // return listToArray( list )[n];
     // Recursive solution
+    
     if( n === 0 )
       return list.value;
     else
