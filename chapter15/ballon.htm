@@ -1,0 +1,34 @@
+<!doctype html>
+
+<p>🎈</p>
+
+<script>
+  let p = document.querySelector("p");
+  let size;
+  function setSize(newSize) {
+    size = newSize;
+    p.style.fontSize = size + "px";
+  }
+  setSize(10);
+
+  function handleArrow(event) {
+    if (event.key == "ArrowUp") {
+      if (size > 100) {
+        p.textContent = "💥";
+        //Key pressed unregistered to avoid continues execution
+        document.body.removeEventListener("keydown", handleArrow);
+
+        console.log("ArrowUp");
+      } else {
+        setSize(size * 1.1);
+        event.preventDefault();
+      }
+    } else if (event.key == "ArrowDown") {
+      setSize(size * 0.9);
+      event.preventDefault();
+    }
+  }
+
+  //Key pressed registered
+  document.body.addEventListener("keydown", handleArrow);
+</script>
